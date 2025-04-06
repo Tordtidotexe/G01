@@ -1,8 +1,8 @@
 import os
 import discord
-from discord.app_commands import describe
+#from discord.app_commands import describe
 from discord.ext import commands
-from discord import app_commands
+#from discord import app_commands
 
 from sv import server_on
 
@@ -15,7 +15,7 @@ async def on_ready():
 #แจ้งเตือนคนเข้า
 @bot.event
 async def on_member_join(member):
-    channel = bot.get.channel(1356879499362439345)
+    channel = bot.get_channel(1356879499362439345)
     text = f"Welcome!!, {member.mention}!"
     embed = discord.Embed(title= 'Welcome!!',
                           description = text,
@@ -34,7 +34,7 @@ async def on_message(message):
         await bot.process_commands(message)
 
 #commands
-bot.commands
+@bot.command()
 async def pv(cnx):
     await cnx.send("https://www.roblox.com/share?code=00bdce6324590b4f83aa0e326ad8aeca&type=Server")
 
